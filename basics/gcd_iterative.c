@@ -11,6 +11,7 @@ int gcd_iterative(int a, int b)
         b = a % b;
         a = temp;
     }
+    return a;
 }
 
 // Test:
