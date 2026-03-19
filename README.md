@@ -9,9 +9,14 @@ A structured collection of mathematical algorithms implemented in Python and C, 
 ## Repository Structure
 ```
 math-algorithms-toolkit/
-├── basics/              # GCD, LCM, primality, factorization
-├── sequences/           # Fibonacci, arithmetic & geometric series
-└── sorting_searching/   # Bubble sort, merge sort, binary search
+│
+├── basics/           # GCD, LCM, primes, factorization, combinatorics
+├── sequences/        # Fibonacci, arithmetic & geometric series, special sequences
+├── sorting/          # Comparison, non-comparison, and hybrid sorts
+├── searching/        # Linear, binary, interpolation, exponential search
+├── utils/            # Timer, visualizer, array validators
+├── build/            # Makefile for compiling C files
+└── tests/            # Unit tests for all modules (Python + C)
 ```
 
 ---
@@ -26,11 +31,14 @@ math-algorithms-toolkit/
 
 ## Progress
 
-| Module             | Status         |
-|--------------------|----------------|
-| basics             | ⏳ Progressing |
-| sequences          | 🔜 Coming soon |
-| sorting_searching  | 🔜 Coming soon |
+| Module       | Status          |
+|--------------|-----------------|
+| basics       | 🚧 In progress  |
+| sequences    | 🔜 Coming soon  |
+| sorting      | 🔜 Coming soon  |
+| searching    | 🔜 Coming soon  |
+| utils        | 🔜 Coming soon  |
+
 
 ---
 
