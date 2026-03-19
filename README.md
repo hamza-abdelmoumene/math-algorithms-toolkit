@@ -28,7 +28,7 @@ math-algorithms-toolkit/
 
 | Module             | Status         |
 |--------------------|----------------|
-| basics             | 🔜 Coming soon |
+| basics             | ⏳ Progressing |
 | sequences          | 🔜 Coming soon |
 | sorting_searching  | 🔜 Coming soon |
 
