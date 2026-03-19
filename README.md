@@ -1,32 +1,44 @@
 # math-algorithms-toolkit
 
-A growing collection of mathematical algorithms implemented in Python, built alongside my AI Engineering studies at ESI.
+A structured collection of mathematical algorithms implemented in Python and C, built as a personal reference and study companion.
 
-## Structure
-math-algorithms-toolkit/
-├── basics/           # GCD, LCM, primes, factorization
-├── sequences/        # Fibonacci, arithmetic & geometric series
-└── sorting_searching/ # Bubble, merge, binary search, etc.
-
-## Goals
-
-- Reinforce Python skills through algorithm implementation
-- Build a personal reference for interview prep (LeetCode)
-- Document what I learn, not just the code
-
-## Progress
-
-| Module | Status |
-|---|---|
-| basics | 🔜 Coming soon |
-| sequences | 🔜 Coming soon |
-| sorting_searching | 🔜 Coming soon |
-
-## Notes
-
-Each file includes a brief explanation of the algorithm and its time complexity.  
-This repo grows incrementally — one algorithm at a time.
+**Author:** Abdelmoumene Hamza Aoub
 
 ---
 
-*First year AI Engineering student @ ESI Algeria*
+## Repository Structure
+```
+math-algorithms-toolkit/
+├── basics/              # GCD, LCM, primality, factorization
+├── sequences/           # Fibonacci, arithmetic & geometric series
+└── sorting_searching/   # Bubble sort, merge sort, binary search
+```
+
+---
+
+## Goals
+
+- Reinforce Python and C skills through hands-on algorithm implementation
+- Build a personal reference for technical interview preparation
+- Document the reasoning behind each algorithm, not just the code
+
+---
+
+## Progress
+
+| Module             | Status         |
+|--------------------|----------------|
+| basics             | 🔜 Coming soon |
+| sequences          | 🔜 Coming soon |
+| sorting_searching  | 🔜 Coming soon |
+
+---
+
+## Notes
+
+Each implementation includes:
+- A brief explanation of the algorithm
+- Time and space complexity analysis
+- Both iterative and recursive variants where applicable
+
+This repository grows incrementally — one algorithm at a time.
