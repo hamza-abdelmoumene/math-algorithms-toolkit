@@ -39,3 +39,5 @@ if __name__ == "__main__":
     print(gcd_iterative(12, 8))  # 4
     print(gcd_recursive(81, 9))  # 9
     print(lcm(4, 6))             # 12
+    print(fast_pow(2, 10))       # 1024
+    print(mod_pow(2, 10, 1000))  # 24

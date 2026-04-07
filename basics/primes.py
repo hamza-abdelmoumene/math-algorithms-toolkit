@@ -48,15 +48,26 @@ def factorize(n):
         factors[n] = 1
     return factors
 
+# ---- Test: -----------------------------------------------
+
+def test(label, func, *args, expected=None):
+    result = func(*args)
+    status = "OK" if expected is None or result == expected else "FAIL"
+    print(f"  [{status}] {label}: {result}")
+
 
 if __name__ == "__main__":
-    # --- sieve ---
-    print(f"sieve(30):      {sieve(30)}")       # [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+    print("-- SIEVE --")
+    test("sieve(10)",  sieve,    10,   expected=[2, 3, 5, 7])
+    test("sieve(30)",  sieve,    30,   expected=[2, 3, 5, 7, 11, 13, 17, 19, 23, 29])
 
-    # --- is_prime ---
-    print(f"is_prime(13):   {is_prime(13)}")    # True
-    print(f"is_prime(1):    {is_prime(1)}")     # False
-    print(f"is_prime(4):    {is_prime(4)}")     # False
+    print("-- IS PRIME --")
+    test("is_prime(1)",   is_prime, 1,   expected=False)
+    test("is_prime(2)",   is_prime, 2,   expected=True)
+    test("is_prime(13)",  is_prime, 13,  expected=True)
+    test("is_prime(100)", is_prime, 100, expected=False)
 
-    # --- factorize ---
-    print(f"factorize(360): {factorize(360)}")  # {2: 3, 3: 2, 5: 1}
+    print("-- FACTORIZE --")
+    test("factorize(12)",  factorize, 12,  expected={2: 2, 3: 1})
+    test("factorize(360)", factorize, 360, expected={2: 3, 3: 2, 5: 1})
+    test("factorize(97)",  factorize, 97,  expected={97: 1})

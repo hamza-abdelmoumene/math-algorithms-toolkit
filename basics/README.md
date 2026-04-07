@@ -20,5 +20,5 @@ Core mathematical operations used as building blocks across algorithms and compe
 | `sieve` | O(n log log n) | O(n) |
 | `is_prime` | O(√n) | O(1) |
 | `factorize` | O(√n) | O(log n) |
-| `factorial` | O(n) | O(1) |
-| `binomial` | O(n·k) | O(n·k) |
+| `factorial` | O(n) | O(n) call stack |
+| `binomial` | O(n) | O(n) call stack |
