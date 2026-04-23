@@ -40,44 +40,49 @@ def binomial(n, r):
         raise ValueError(f"r must be <= n, got n={n}, r={r}")
     return permutations(n, r) // factorial(r)
 
+# ━━━━━━━━━ Test: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-# ---- Test: -----------------------------------------------
-
-
-def test(label, func, *args, expected=None):
+def test(label, func, *args, expected=None, expect_error=False):
     try:
         result = func(*args)
-        status = "✅" if expected is None or result == expected else "❌"
-        print(f"  {status} {label}: {result}")
+        status = "OK  " if expected is None or result == expected else "FAIL"
+        print(f"  [{status}] {label:<40} got {result}  (expected {expected})")
     except Exception as e:
-        print(f"  {label}: {e}")
+        status = "OK  " if expect_error else "ERR "
+        print(f"  [{status}] {label:<40} raised {type(e).__name__}: {e}")
+
+def separator(title):
+    print(f"\n{'━' * 40}\n   {title}\n{'━' * 40}")
+
 
 if __name__ == "__main__":
-    print("━" * 40)
-    print("   FACTORIAL")
-    print("━" * 40)
-    test("factorial(0)",  factorial, 0,  expected=1)
-    test("factorial(1)",  factorial, 1,  expected=1)
-    test("factorial(5)",  factorial, 5,  expected=120)
-    test("factorial(10)", factorial, 10, expected=3628800)
-    test("factorial(-3)", factorial, -3)
 
-    print("━" * 40)
-    print("   PERMUTATIONS")
-    print("━" * 40)
-    test("P(5, 3)", permutations, 5, 3, expected=60)
-    test("P(5, 0)", permutations, 5, 0, expected=1)
-    test("P(5, 5)", permutations, 5, 5, expected=120)
-    test("P(3, 5)", permutations, 3, 5)
-    test("P(-1, 2)", permutations, -1, 2)
+    separator("FACTORIAL (recursive)")
+    test("factorial(0)",           factorial, 0,   expected=1)
+    test("factorial(1)",           factorial, 1,   expected=1)
+    test("factorial(5)",           factorial, 5,   expected=120)
+    test("factorial(10)",          factorial, 10,  expected=3628800)
+    test("factorial(-3) — error",  factorial, -3,  expect_error=True)
 
-    print("━" * 40)
-    print("   BINOMIAL")
-    print("━" * 40)
-    test("C(5, 3)", binomial, 5, 3, expected=10)
-    test("C(5, 0)", binomial, 5, 0, expected=1)
-    test("C(5, 5)", binomial, 5, 5, expected=1)
-    test("C(10, 3)", binomial, 10, 3, expected=120)
-    test("C(3, 5)", binomial, 3, 5)
+    separator("FACTORIAL (iterative)")
+    test("factorial_iterative(0)",           factorial_iterative, 0,   expected=1)
+    test("factorial_iterative(1)",           factorial_iterative, 1,   expected=1)
+    test("factorial_iterative(5)",           factorial_iterative, 5,   expected=120)
+    test("factorial_iterative(10)",          factorial_iterative, 10,  expected=3628800)
+    test("factorial_iterative(-3) — error",  factorial_iterative, -3,  expect_error=True)
 
-    print("━" * 40)
+    separator("PERMUTATIONS")
+    test("P(5, 3)",                permutations, 5, 3,  expected=60)
+    test("P(5, 0)  — r=0",         permutations, 5, 0,  expected=1)
+    test("P(5, 5)  — r=n",         permutations, 5, 5,  expected=120)
+    test("P(1, 1)",                permutations, 1, 1,  expected=1)
+    test("P(3, 5)  — r>n error",   permutations, 3, 5,  expect_error=True)
+    test("P(-1, 2) — neg error",   permutations, -1, 2, expect_error=True)
+
+    separator("BINOMIAL COEFFICIENT")
+    test("C(5, 3)",                binomial, 5,  3,  expected=10)
+    test("C(5, 0)  — r=0",         binomial, 5,  0,  expected=1)
+    test("C(5, 5)  — r=n",         binomial, 5,  5,  expected=1)
+    test("C(10, 3)",               binomial, 10, 3,  expected=120)
+    test("C(10, 7) — symmetry",    binomial, 10, 7,  expected=120)
+    test("C(3, 5)  — r>n error",   binomial, 3,  5,  expect_error=True)

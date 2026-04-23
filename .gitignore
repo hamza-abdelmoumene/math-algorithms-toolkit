@@ -205,3 +205,11 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+# C build artifacts
+*.o
+*.a
+*.out
+a.out
+
+# Compiled binaries (no extension on Linux/Mac)
+# Already covered: build/  ← this is in your current file
