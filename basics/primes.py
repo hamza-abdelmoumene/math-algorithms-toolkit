@@ -45,6 +45,7 @@ def factorize(n):
         factors[n] = 1
     return factors
 
+
 # ━━━━━━━━━ Test: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 def test(label, func, *args, expected=None):
